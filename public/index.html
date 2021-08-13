@@ -19,7 +19,7 @@
     <div class="flex w-full">
       <div
         class="
-          lg:w-72
+          lg:w-80
           bg-purple-900
           h-screen
           lg:px-8 lg:py-10
@@ -43,7 +43,15 @@
             <p class="font-poppins text-white text-xs font-light">Finance</p>
           </div>
           <button
-            class="bg-purple-600 text-white w-6 h-6 focus:outline-none ml-auto"
+            class="
+              bg-purple-600
+              text-white
+              w-6
+              h-6
+              focus:outline-none
+              ml-auto
+              rounded-md
+            "
           >
             <i class="bx bx-chevron-down"></i>
           </button>
@@ -57,13 +65,15 @@
                 justify-center
                 lg:justify-start
                 hover:text-yellow-400
+                transition
+                duration-200
               "
               href=""
             >
               <i class="bx bx-grid-alt lg:mr-5 text-lg"></i>
               <p class="font-poppins hidden lg:inline text-sm">Dashboard</p>
             </a>
-            <div x-data="{ open: false }" class="flex flex-col">
+            <div x-data="{ open: false }" class="flex flex-col mt-10">
               <button
                 @click="open = ! open"
                 class="
@@ -72,8 +82,9 @@
                   justify-center
                   lg:justify-start
                   hover:text-yellow-400
-                  mt-10
                   focus:outline-none
+                  transition
+                  duration-200
                 "
               >
                 <i class="bx bxs-component lg:mr-5 text-lg"></i>
@@ -94,6 +105,12 @@
                   rounded-lg
                 "
                 x-show="open"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform scale-90"
+                x-transition:enter-end="opacity-100 transform scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 transform scale-100"
+                x-transition:leave-end="opacity-0 transform scale-90"
               >
                 <a
                   href=""
@@ -102,7 +119,7 @@
                     text-sm text-gray-700
                     hover:bg-gray-200
                     px-4
-                    py-4
+                    py-3
                     flex
                     rounded-lg
                     transition
@@ -110,12 +127,150 @@
                   "
                   >Tables</a
                 >
+                <a
+                  href=""
+                  class="
+                    font-poppins
+                    text-sm text-gray-700
+                    hover:bg-gray-200
+                    px-4
+                    py-3
+                    flex
+                    rounded-lg
+                    transition
+                    duration-200
+                  "
+                  >Chart</a
+                >
+              </div>
+            </div>
+            <div x-data="{ open: false }" class="flex flex-col mt-10">
+              <button
+                @click="open = ! open"
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  lg:justify-start
+                  hover:text-yellow-400
+                  focus:outline-none
+                  transition
+                  duration-200
+                "
+              >
+                <i class="bx bxs-folder lg:mr-5 text-lg"></i>
+                <p class="font-poppins hidden lg:inline text-sm">Pages</p>
+                <i
+                  :class="[open ? 'bx-rotate-90' : '']"
+                  class="bx bx-chevron-right ml-auto"
+                ></i>
+              </button>
+              <div
+                class="
+                  flex flex-col
+                  bg-white
+                  shadow-md
+                  px-4
+                  py-4
+                  mt-3
+                  rounded-lg
+                "
+                x-show="open"
+                x-transition:enter="transition ease-out duration-200"
+                x-transition:enter-start="opacity-0 transform scale-90"
+                x-transition:enter-end="opacity-100 transform scale-100"
+                x-transition:leave="transition ease-in duration-200"
+                x-transition:leave-start="opacity-100 transform scale-100"
+                x-transition:leave-end="opacity-0 transform scale-90"
+              >
+                <a
+                  href=""
+                  class="
+                    font-poppins
+                    text-sm text-gray-700
+                    hover:bg-gray-200
+                    px-4
+                    py-3
+                    flex
+                    rounded-lg
+                    transition
+                    duration-200
+                  "
+                  >Login</a
+                >
+                <a
+                  href=""
+                  class="
+                    font-poppins
+                    text-sm text-gray-700
+                    hover:bg-gray-200
+                    px-4
+                    py-3
+                    flex
+                    rounded-lg
+                    transition
+                    duration-200
+                  "
+                  >Register</a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="w-10/12 bg-gray-100"></div>
+      <div class="w-full bg-gray-100">
+        <nav class="px-10 py-5 flex justify-between items-center">
+          <div>
+            <p class="font-poppins text-gray-500">Hello Willy, Welcome back!</p>
+            <p class="font-poppins text-gray-700 text-2xl font-medium">
+              Dashboard
+            </p>
+          </div>
+          <div class="flex">
+            <div
+              class="
+                bg-gray-200
+                text-gray-500
+                px-4
+                py-2
+                flex
+                items-center
+                rounded-lg
+                mr-10
+              "
+            >
+              <i class="bx bx-search text-lg"></i>
+              <input
+                class="
+                  bg-transparent
+                  focus:outline-none
+                  px-3
+                  placeholder-gray-400
+                  font-poppins
+                  text-sm
+                "
+                placeholder="Search Dashboard"
+                type="text"
+              />
+              <i class="bx bx-slider-alt text-lg"></i>
+            </div>
+            <button class="focus:outline-none mr-10">
+              <i class="bx bx-message-square-dots text-2xl"></i>
+            </button>
+            <button class="focus:outline-none mr-10">
+              <i class="bx bxs-bell text-2xl"></i>
+            </button>
+            <button class="focus:outline-none">
+              <img
+                class="w-10 h-10 rounded-full object-cover"
+                src="images/user.jpg"
+                alt=""
+              />
+            </button>
+          </div>
+        </nav>
+        <div class="container mx-auto"></div>
+      </div>
     </div>
   </body>
 </html>
