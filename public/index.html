@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="flex w-full">
+      <div
+        class="
+          lg:w-72
+          bg-purple-900
+          h-screen
+          lg:px-8 lg:py-10
+          transition-all
+          duration-500
+        "
+      >
+        <div class="hidden lg:block">
+          <p class="font-poppins text-white text-2xl text-center font-semibold">
+            Adminers.
+          </p>
+        </div>
+        <div class="flex justify-center lg:justify-start items-center mt-10">
+          <img
+            class="w-10 h-10 rounded-full object-cover mr-5"
+            src="images/user.jpg"
+            alt=""
+          />
+          <div class="lg:flex flex-col justify-center hidden">
+            <p class="font-poppins text-white text-sm">Willy kurniawan</p>
+            <p class="font-poppins text-white text-xs font-light">Finance</p>
+          </div>
+          <button
+            class="bg-purple-600 text-white w-6 h-6 focus:outline-none ml-auto"
+          >
+            <i class="bx bx-chevron-down"></i>
+          </button>
+        </div>
+        <div class="mt-14">
+          <div class="text-white flex flex-col">
+            <a
+              class="
+                flex
+                items-center
+                justify-center
+                lg:justify-start
+                hover:text-yellow-400
+              "
+              href=""
+            >
+              <i class="bx bx-grid-alt lg:mr-5 text-lg"></i>
+              <p class="font-poppins hidden lg:inline text-sm">Dashboard</p>
+            </a>
+            <div x-data="{ open: false }" class="flex flex-col">
+              <button
+                @click="open = ! open"
+                class="
+                  flex
+                  items-center
+                  justify-center
+                  lg:justify-start
+                  hover:text-yellow-400
+                  mt-10
+                  focus:outline-none
+                "
+              >
+                <i class="bx bxs-component lg:mr-5 text-lg"></i>
+                <p class="font-poppins hidden lg:inline text-sm">Components</p>
+                <i
+                  :class="[open ? 'bx-rotate-90' : '']"
+                  class="bx bx-chevron-right ml-auto"
+                ></i>
+              </button>
+              <div
+                class="
+                  flex flex-col
+                  bg-white
+                  shadow-md
+                  px-4
+                  py-4
+                  mt-3
+                  rounded-lg
+                "
+                x-show="open"
+              >
+                <a
+                  href=""
+                  class="
+                    font-poppins
+                    text-sm text-gray-700
+                    hover:bg-gray-200
+                    px-4
+                    py-4
+                    flex
+                    rounded-lg
+                    transition
+                    duration-200
+                  "
+                  >Tables</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-10/12 bg-gray-100"></div>
+    </div>
+  </body>
+</html>
