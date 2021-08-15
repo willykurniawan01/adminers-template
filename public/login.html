@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adminers - Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"
+    ></script>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+      <div class="grid grid-cols-12">
+        <div class="col-span-12 lg:col-span-5 px-10 lg:px-20 lg:py-20 flex flex-col justify-center bg-gray-100 h-screen">
+          <div>
+            <p class="font-poppins text-gray-500 text-lg">Welcome back!</p>
+            <p class="font-poppins text-gray-700 text-2xl font-semibold">Login</p>
+          </div>
+
+          <div class="flex flex-col mt-10">
+            <label class="font-poppins text-gray-500">Email</label>
+            <input placeholder="Example@mail.com" class="bg-gray-200 mt-2 placeholder-gray-500 text-gray-700 focus:outline-none focus:ring-2 transition duration-300 ring-purple-900 px-6 py-2 rounded-xl font-poppins " type="email"></input>
+          </div>
+          <div class="flex flex-col mt-10">
+            <label class="font-poppins text-gray-500">Password</label>
+            <input placeholder="Your Password" class="bg-gray-200 mt-2 placeholder-gray-500 text-gray-700 focus:outline-none focus:ring-2 transition duration-300 ring-purple-900 px-6 py-2 rounded-xl font-poppins " type="password"></input>
+          </div>
+          <div class="flex flex-col mt-10">
+           <button class=" bg-purple-900 font-poppins text-white px-10 py-2 rounded-xl transition duration-300 hover:bg-purple-800 ">Login</button>
+          </div>
+
+          <p class="text-gray-500 font-poppins mt-10">Don't have an account? <a class="text-gray-700 hover:underline" href="#">Register here</a></p>
+        </div>
+        <div class="hidden sm:flex col-span-7 bg-purple-900 h-screen"></div>
+      </div>
+  </body>
+</html>
